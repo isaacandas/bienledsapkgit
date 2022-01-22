@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="4"
+    android:versionName="1.0.3"
+    package="com.sevson.androidambiapp"
+    platformBuildVersionCode="4"
+    platformBuildVersionName="1.0.3">
+
+    <uses-sdk
+        android:minSdkVersion="22"
+        android:targetSdkVersion="27" />
+
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="true" />
+
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen.multitouch"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen.multitouch.distinct"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.faketouch"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.sensor"
+        android:required="false" />
+
+    <uses-permission
+        android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:smallScreens="false"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:theme="@ref/0x7f100006"
+        android:label="@ref/0x7f0f001e"
+        android:icon="@ref/0x7f0700c7"
+        android:allowBackup="true"
+        android:supportsRtl="false"
+        android:banner="@ref/0x7f07005f">
+
+        <activity
+            android:theme="@ref/0x7f100009"
+            android:label="@ref/0x7f0f001e"
+            android:name="com.sevson.androidambiapp.BootHelperActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="2"
+            android:noHistory="true">
+
+            <intent-filter>
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:theme="@ref/0x7f100009"
+            android:label="@ref/0x7f0f007c"
+            android:name="com.sevson.androidambiapp.ProjectionHelperActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="2"
+            android:noHistory="true">
+
+            <intent-filter>
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:theme="@ref/0x7f100006"
+            android:label="@ref/0x7f0f001e"
+            android:name="com.sevson.androidambiapp.MainActivity"
+            android:launchMode="2"
+            android:screenOrientation="0">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+
+                <action
+                    android:name="android.intent.action.MAIN" />
+
+                <category
+                    android:name="android.intent.category.LEANBACK_LAUNCHER" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@ref/0x7f130001" />
+        </activity>
+
+        <activity
+            android:label="@ref/0x7f0f0079"
+            android:name="com.sevson.androidambiapp.ColorSettingsActivity"
+            android:launchMode="2"
+            android:screenOrientation="0"
+            android:parentActivityName="com.sevson.androidambiapp.MainActivity">
+
+            <intent-filter>
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
+            android:label="@ref/0x7f0f007b"
+            android:name="com.sevson.androidambiapp.LedSettingsActivity"
+            android:launchMode="2"
+            android:screenOrientation="0"
+            android:parentActivityName="com.sevson.androidambiapp.MainActivity">
+
+            <intent-filter>
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
+            android:label="@ref/0x7f0f007a"
+            android:name="com.sevson.androidambiapp.WebActivity"
+            android:launchMode="2"
+            android:screenOrientation="0"
+            android:parentActivityName="com.sevson.androidambiapp.MainActivity">
+
+            <intent-filter>
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <service
+            android:name="com.sevson.androidambiapp.AmbiAppService">
+
+            <intent-filter>
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.sevson.androidambiapp.BootUpReceiver">
+
+            <intent-filter>
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <action
+                    android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <action
+                    android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+                <action
+                    android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.android.vending.derived.apk.id"
+            android:value="1" />
+    </application>
+</manifest>
